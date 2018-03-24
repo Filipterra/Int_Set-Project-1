@@ -9,27 +9,31 @@
 #define CLASS_SET_HPP_
 
 #define MAX_INT_VAL 100
-#include <iostream>
-
 
 class Set {
+public:
+#ifndef DEBUGG
     int *Elements;
     char *Name;
-public:
+#endif
 	Set (const char*);
     Set (const Set&);
 	Set (int, ...);
-	//dorobić operatory na R-referencje
+	//Set (Set&& S);
 	~Set ();
 	Set operator+ (const Set&) const;
 	Set operator+ (int) const;
 	Set& operator+= (const Set&);
+	Set operator+= (int);
 	Set operator- (const Set&) const;
 	Set operator- (int) const;
 	Set& operator-= (const Set&);
+	Set operator-= (int);
 	Set operator* (const Set&) const;
 	Set& operator*= (const Set&);
 	Set& operator= (const Set&);
+	//Set& operator= (Set&&);
+	bool operator== (const Set&) const;
 	friend std::ostream& operator<< (std::ostream&, const Set&);
 };
 
