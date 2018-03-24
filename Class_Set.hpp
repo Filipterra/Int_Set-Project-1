@@ -47,7 +47,7 @@ public:
 	friend bool Test9();
 	friend bool Test10();
 	#else
-	friend char* Ret_name(const Set&);
+	friend const char* Ret_name(const Set&);
 	#endif
 };
 
