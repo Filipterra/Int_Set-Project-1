@@ -247,7 +247,7 @@ bool Set::operator== (const Set& B) const
 }
 
 #ifndef DEBUG
-char* Ret_name(const Set& S)
+const char* Ret_name(const Set& S)
 {
 	return S.Name;
 }
